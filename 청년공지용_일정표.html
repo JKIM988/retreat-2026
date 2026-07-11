@@ -27,53 +27,57 @@
     background: linear-gradient(160deg, #0d47a1 0%, #1565c0 30%, #42a5f5 70%, #64b5f6 100%);
     color: #fff;
     padding: 32px 40px 28px;
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    position: relative;
-    overflow: hidden;
+    display: flex; align-items: center; gap: 32px;
+    position: relative; overflow: hidden;
   }
-  .header .circle-bg {
-    position: absolute; top: -40px; right: -40px;
-    width: 160px; height: 160px; border-radius: 50%;
-    background: rgba(255,255,255,0.05);
-  }
-  .header-left {
-    flex: 1;
-  }
+  .header .circle-bg { position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+  .header-left { flex: 1; }
   .header .church-name {
-    display: inline-block;
-    background: rgba(255,255,255,0.15);
+    display: inline-block; background: rgba(255,255,255,0.15);
     padding: 4px 16px; border-radius: 16px;
-    font-size: 12px; font-weight: 500; letter-spacing: 1.5px;
-    margin-bottom: 8px;
+    font-size: 12px; font-weight: 500; letter-spacing: 1.5px; margin-bottom: 8px;
   }
-  .header h1 {
-    font-size: 38px; font-weight: 900; letter-spacing: -1px; margin-bottom: 4px;
-  }
-  .header .subtitle {
-    font-size: 14px; font-weight: 400; opacity: 0.9;
-  }
-  .header-right {
-    text-align: right;
-    min-width: 340px;
-  }
+  .header h1 { font-size: 38px; font-weight: 900; letter-spacing: -1px; margin-bottom: 4px; }
+  .header .subtitle { font-size: 14px; font-weight: 400; opacity: 0.9; }
+  .header-right { text-align: right; min-width: 340px; }
   .header .verse-box {
-    background: rgba(255,255,255,0.12);
-    border-radius: 12px;
-    padding: 14px 20px;
-    font-size: 13px; line-height: 1.7; font-weight: 300;
-    margin-bottom: 10px;
+    background: rgba(255,255,255,0.12); border-radius: 12px;
+    padding: 14px 20px; font-size: 13px; line-height: 1.7; font-weight: 300; margin-bottom: 10px;
   }
   .header .verse-box .ref { font-weight: 600; font-size: 12px; opacity: 0.85; margin-top: 2px; }
-  .header .info-pills {
-    display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap;
+  .header .info-pills { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap; }
+  .header .pill { background: rgba(255,255,255,0.18); padding: 5px 14px; border-radius: 16px; font-size: 12px; font-weight: 500; }
+
+  /* CATEGORY LEGEND */
+  .legend {
+    display: flex; justify-content: center; gap: 16px; padding: 10px 40px;
+    background: #f8fbff; border-bottom: 1px solid #e3f2fd;
+    flex-wrap: wrap;
   }
-  .header .pill {
-    background: rgba(255,255,255,0.18);
-    padding: 5px 14px; border-radius: 16px;
-    font-size: 12px; font-weight: 500;
+  .legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 600; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 3px; }
+
+  /* CATEGORY COLORS */
+  .cat-move { background: #78909c; }
+  .cat-meal { background: #ef6c00; }
+  .cat-activity { background: #1565c0; }
+  .cat-free { background: #43a047; }
+  .cat-worship { background: #6a1b9a; }
+  .cat-sharing { background: #00838f; }
+
+  /* CATEGORY TAGS */
+  .tag {
+    display: inline-block; padding: 1px 8px; border-radius: 4px;
+    font-size: 9px; font-weight: 700; color: #fff;
+    letter-spacing: 0.3px; margin-right: 4px; vertical-align: middle;
+    line-height: 16px;
   }
+  .tag-move { background: #78909c; }
+  .tag-meal { background: #ef6c00; }
+  .tag-activity { background: #1565c0; }
+  .tag-free { background: #43a047; }
+  .tag-worship { background: #6a1b9a; }
+  .tag-sharing { background: #00838f; }
 
   /* 3-COLUMN DAYS */
   .days-row {
@@ -86,111 +90,71 @@
     border-right: 1px solid #e3f2fd;
   }
   .day-col:last-child { border-right: none; }
-  .day-col .day-tag {
-    display: inline-block;
-    background: linear-gradient(135deg, #1565c0, #42a5f5);
-    color: #fff;
-    padding: 6px 16px;
-    border-radius: 10px;
-    font-size: 14px; font-weight: 700;
-    margin-bottom: 14px;
+  .day-col .day-tag-header {
+    display: inline-block; background: linear-gradient(135deg, #1565c0, #42a5f5);
+    color: #fff; padding: 6px 16px; border-radius: 10px;
+    font-size: 14px; font-weight: 700; margin-bottom: 14px;
   }
-  .day-col .day-tag span { font-weight: 400; font-size: 12px; opacity: 0.85; margin-left: 6px; }
+  .day-col .day-tag-header span { font-weight: 400; font-size: 12px; opacity: 0.85; margin-left: 6px; }
 
   .tl-row {
-    display: flex;
-    gap: 10px;
-    padding: 5px 0;
-    border-bottom: 1px solid #f5f8fc;
-    align-items: flex-start;
+    display: flex; gap: 10px; padding: 5px 0;
+    border-bottom: 1px solid #f5f8fc; align-items: flex-start;
   }
   .tl-row:last-child { border-bottom: none; }
-  .tl-row.major { background: #f8fbff; margin: 2px -8px; padding: 6px 8px; border-radius: 8px; border-bottom: none; }
   .tl-time {
-    min-width: 95px;
-    font-size: 12px; font-weight: 600; color: #1565c0;
+    min-width: 95px; font-size: 12px; font-weight: 600; color: #1565c0;
     padding-top: 1px; white-space: nowrap;
   }
-  .tl-text {
-    flex: 1;
-    font-size: 13px; font-weight: 500; line-height: 1.4;
-  }
-  .tl-text .desc {
-    font-size: 11px; color: #78909c; font-weight: 400; margin-top: 1px;
-  }
+  .tl-text { flex: 1; font-size: 13px; font-weight: 500; line-height: 1.5; }
+  .tl-text .desc { font-size: 11px; color: #78909c; font-weight: 400; margin-top: 1px; }
+
+  /* ROW HIGHLIGHT BY CATEGORY */
+  .row-move { border-left: 3px solid #78909c; padding-left: 8px; margin-left: -3px; }
+  .row-meal { border-left: 3px solid #ef6c00; padding-left: 8px; margin-left: -3px; background: #fff8f0; }
+  .row-activity { border-left: 3px solid #1565c0; padding-left: 8px; margin-left: -3px; background: #f0f7ff; }
+  .row-free { border-left: 3px solid #43a047; padding-left: 8px; margin-left: -3px; background: #f1f8f1; }
+  .row-worship { border-left: 3px solid #6a1b9a; padding-left: 8px; margin-left: -3px; background: #f8f0ff; }
+  .row-sharing { border-left: 3px solid #00838f; padding-left: 8px; margin-left: -3px; background: #f0fafb; }
 
   .options-mini {
-    background: #f0f7ff;
-    border: 1px solid #e3f2fd;
-    border-radius: 10px;
-    padding: 10px 12px;
-    margin-top: 8px;
-    font-size: 11px; line-height: 1.8;
+    background: #f0f7ff; border: 1px solid #e3f2fd; border-radius: 10px;
+    padding: 10px 12px; margin-top: 8px; font-size: 11px; line-height: 1.8;
   }
   .options-mini strong { color: #1565c0; font-size: 11px; }
   .options-mini ul { list-style: none; padding-left: 0; }
   .options-mini li::before { content: '▸ '; color: #42a5f5; font-weight: 700; }
 
-  /* BOTTOM SECTION */
+  /* BOTTOM */
   .bottom-row {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 0;
+    display: grid; grid-template-columns: 1fr 1.5fr; gap: 0;
     border-top: 2px solid #e3f2fd;
   }
-  .bottom-left {
-    padding: 24px;
-    border-right: 1px solid #e3f2fd;
-  }
-  .bottom-right {
-    padding: 24px;
-  }
+  .bottom-left { padding: 24px; border-right: 1px solid #e3f2fd; }
+  .bottom-right { padding: 24px; }
 
   .section-label {
     display: flex; align-items: center; gap: 8px;
-    font-size: 15px; font-weight: 700; color: #0d47a1;
-    margin-bottom: 14px;
+    font-size: 15px; font-weight: 700; color: #0d47a1; margin-bottom: 14px;
   }
   .section-label .ico {
     width: 28px; height: 28px; background: #e3f2fd; border-radius: 8px;
     display: flex; align-items: center; justify-content: center; font-size: 14px;
   }
 
-  .check-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6px 20px;
-  }
-  .check-item {
-    display: flex; align-items: center; gap: 6px;
-    font-size: 12px; line-height: 2;
-  }
-  .chk {
-    width: 13px; height: 13px; border: 1.5px solid #bbdefb;
-    border-radius: 3px; flex-shrink: 0;
-  }
-  .check-subtitle {
-    grid-column: 1 / -1;
-    font-size: 12px; font-weight: 700; color: #1565c0;
-    margin-top: 6px;
-  }
+  .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
+  .check-item { display: flex; align-items: center; gap: 6px; font-size: 12px; line-height: 2; }
+  .chk { width: 13px; height: 13px; border: 1.5px solid #bbdefb; border-radius: 3px; flex-shrink: 0; }
+  .check-subtitle { grid-column: 1 / -1; font-size: 12px; font-weight: 700; color: #1565c0; margin-top: 6px; }
 
   /* KEYWORD */
   .kw-section {
     background: linear-gradient(135deg, #e3f2fd 0%, #f0f7ff 100%);
-    border-radius: 14px;
-    padding: 18px 20px;
+    border-radius: 14px; padding: 18px 20px;
   }
-  .kw-section h4 {
-    font-size: 14px; font-weight: 700; color: #0d47a1; margin-bottom: 4px;
-  }
-  .kw-section .intro {
-    font-size: 11px; color: #546e7a; line-height: 1.6; margin-bottom: 14px;
-  }
-  .kw-cards {
-    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;
-    margin-bottom: 14px;
-  }
+  .kw-section h4 { font-size: 14px; font-weight: 700; color: #0d47a1; margin-bottom: 4px; }
+  .kw-section .intro { font-size: 11px; color: #546e7a; line-height: 1.6; margin-bottom: 14px; }
+  .kw-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 14px; }
   .kw-card {
     background: #fff; border-radius: 10px; padding: 14px;
     box-shadow: 0 1px 6px rgba(13,71,161,0.06);
@@ -198,8 +162,7 @@
   .kw-card .num {
     display: inline-block; background: #1565c0; color: #fff;
     width: 20px; height: 20px; border-radius: 50%;
-    text-align: center; line-height: 20px;
-    font-size: 11px; font-weight: 700; margin-bottom: 6px;
+    text-align: center; line-height: 20px; font-size: 11px; font-weight: 700; margin-bottom: 6px;
   }
   .kw-card .title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
   .kw-card .q { font-size: 11px; color: #546e7a; line-height: 1.5; margin-bottom: 6px; }
@@ -213,12 +176,9 @@
   }
   .kw-submit strong { color: #1565c0; }
 
-  /* FOOTER */
   .footer {
     background: linear-gradient(135deg, #0d47a1, #1976d2);
-    color: #fff;
-    padding: 16px 40px;
-    text-align: center;
+    color: #fff; padding: 16px 40px; text-align: center;
   }
   .footer .big { font-size: 15px; font-weight: 700; }
   .footer .small { font-size: 11px; font-weight: 300; opacity: 0.8; margin-top: 2px; }
@@ -249,25 +209,36 @@
     </div>
   </div>
 
-  <!-- 3 DAYS SIDE BY SIDE -->
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot cat-move"></div>이동</div>
+    <div class="legend-item"><div class="legend-dot cat-meal"></div>식사</div>
+    <div class="legend-item"><div class="legend-dot cat-activity"></div>활동</div>
+    <div class="legend-item"><div class="legend-dot cat-free"></div>자유시간</div>
+    <div class="legend-item"><div class="legend-dot cat-worship"></div>예배</div>
+    <div class="legend-item"><div class="legend-dot cat-sharing"></div>나눔</div>
+  </div>
+
+  <!-- 3 DAYS -->
   <div class="days-row">
 
     <!-- DAY 1 -->
     <div class="day-col">
-      <div class="day-tag">DAY 1 <span>7/17 금요일</span></div>
-      <div class="tl-row"><div class="tl-time">11:00</div><div class="tl-text">교회 집합</div></div>
-      <div class="tl-row"><div class="tl-time">11:30</div><div class="tl-text">교회 → 대부도 출발</div></div>
-      <div class="tl-row"><div class="tl-time">12:40~13:40</div><div class="tl-text">점심식사<div class="desc">대부도 바닷마을떡볶이</div></div></div>
-      <div class="tl-row major"><div class="tl-time">14:00~15:30</div><div class="tl-text">갯벌체험<div class="desc">탄도어촌체험마을 (1시간 체험 + 30분 준비/마무리)</div></div></div>
-      <div class="tl-row"><div class="tl-time">15:30~16:00</div><div class="tl-text">숙소 도착</div></div>
-      <div class="tl-row"><div class="tl-time">16:00~18:00</div><div class="tl-text">자유시간 및 휴식</div></div>
-      <div class="tl-row major"><div class="tl-time">18:00~19:30</div><div class="tl-text">저녁식사<div class="desc">바베큐 + 바지락 칼국수</div></div></div>
-      <div class="tl-row major"><div class="tl-time">19:30~20:10</div><div class="tl-text">찬양 (5곡)<div class="desc">주제찬양 "더원합니다"</div></div></div>
-      <div class="tl-row major"><div class="tl-time">20:10~20:40</div><div class="tl-text">말씀</div></div>
-      <div class="tl-row major"><div class="tl-time">20:40~21:40</div><div class="tl-text">"너의 하나님" 나눔<div class="desc">키워드 카드 뽑기 → 패널 토크</div></div></div>
-      <div class="tl-row"><div class="tl-time">21:40~22:00</div><div class="tl-text">휴식</div></div>
-      <div class="tl-row major"><div class="tl-time">22:00~23:00</div><div class="tl-text">레크리에이션 (팀 대항!)<div class="desc">등 뒤 그림 맞추기 · 양세찬 게임 · 입모양으로 말해요</div></div></div>
-      <div class="tl-row"><div class="tl-time">23:00</div><div class="tl-text">공식 취침<div class="desc">이후 자유 나눔/취침</div></div></div>
+      <div class="day-tag-header">DAY 1 <span>7/17 금요일</span></div>
+
+      <div class="tl-row row-move"><div class="tl-time">11:00</div><div class="tl-text"><span class="tag tag-move">이동</span> 교회 집합</div></div>
+      <div class="tl-row row-move"><div class="tl-time">11:30</div><div class="tl-text"><span class="tag tag-move">이동</span> 교회 → 대부도 출발</div></div>
+      <div class="tl-row row-meal"><div class="tl-time">12:40~13:40</div><div class="tl-text"><span class="tag tag-meal">식사</span> 점심식사<div class="desc">대부도 바닷마을떡볶이</div></div></div>
+      <div class="tl-row row-activity"><div class="tl-time">14:00~15:30</div><div class="tl-text"><span class="tag tag-activity">활동</span> 갯벌체험<div class="desc">탄도어촌체험마을 (1시간 체험 + 30분 준비/마무리)</div></div></div>
+      <div class="tl-row row-move"><div class="tl-time">15:30~16:00</div><div class="tl-text"><span class="tag tag-move">이동</span> 숙소 도착</div></div>
+      <div class="tl-row row-free"><div class="tl-time">16:00~18:00</div><div class="tl-text"><span class="tag tag-free">자유</span> 자유시간 및 휴식</div></div>
+      <div class="tl-row row-meal"><div class="tl-time">18:00~19:30</div><div class="tl-text"><span class="tag tag-meal">식사</span> 저녁식사<div class="desc">바베큐 + 바지락 칼국수</div></div></div>
+      <div class="tl-row row-worship"><div class="tl-time">19:30~20:10</div><div class="tl-text"><span class="tag tag-worship">예배</span> 찬양 (5곡)<div class="desc">주제찬양 "더원합니다"</div></div></div>
+      <div class="tl-row row-worship"><div class="tl-time">20:10~20:40</div><div class="tl-text"><span class="tag tag-worship">예배</span> 말씀</div></div>
+      <div class="tl-row row-sharing"><div class="tl-time">20:40~21:40</div><div class="tl-text"><span class="tag tag-sharing">나눔</span> "너의 하나님" 나눔<div class="desc">키워드 카드 뽑기 → 패널 토크</div></div></div>
+      <div class="tl-row row-free"><div class="tl-time">21:40~22:00</div><div class="tl-text"><span class="tag tag-free">자유</span> 휴식</div></div>
+      <div class="tl-row row-activity"><div class="tl-time">22:00~23:00</div><div class="tl-text"><span class="tag tag-activity">활동</span> 레크리에이션 (팀 대항!)<div class="desc">등 뒤 그림 맞추기 · 양세찬 게임 · 입모양으로 말해요</div></div></div>
+      <div class="tl-row row-free"><div class="tl-time">23:00</div><div class="tl-text"><span class="tag tag-free">자유</span> 공식 취침<div class="desc">이후 자유 나눔/취침</div></div></div>
 
       <div class="options-mini">
         <strong>갯벌 미참여 시 대안 (택1)</strong>
@@ -281,35 +252,34 @@
 
     <!-- DAY 2 -->
     <div class="day-col">
-      <div class="day-tag">DAY 2 <span>7/18 토요일</span></div>
-      <div class="tl-row"><div class="tl-time">08:00</div><div class="tl-text">기상</div></div>
-      <div class="tl-row"><div class="tl-time">08:00~08:30</div><div class="tl-text">세면 + 간단한 아침식사</div></div>
-      <div class="tl-row major"><div class="tl-time">08:30~09:30</div><div class="tl-text">아침 묵상 & 나눔 (팀별)<div class="desc">멘토팀과 함께하는 묵상 시간</div></div></div>
-      <div class="tl-row major"><div class="tl-time">09:30~10:30</div><div class="tl-text">뒷정리 + 보물찾기 이벤트</div></div>
-      <div class="tl-row"><div class="tl-time">~11:00</div><div class="tl-text">퇴실</div></div>
-      <div class="tl-row"><div class="tl-time">11:00~12:00</div><div class="tl-text">별미지교 시흥점 이동</div></div>
-      <div class="tl-row"><div class="tl-time">12:00~13:00</div><div class="tl-text">점심식사<div class="desc">별미지교 시흥점</div></div></div>
-      <div class="tl-row"><div class="tl-time">13:00~13:20</div><div class="tl-text">배곧 CGV 이동</div></div>
-      <div class="tl-row major"><div class="tl-time">13:20~15:20</div><div class="tl-text">영화관람 — "다윗"<div class="desc">배곧 CGV</div></div></div>
-      <div class="tl-row"><div class="tl-time">15:20~16:40</div><div class="tl-text">교회 이동 → 해산</div></div>
+      <div class="day-tag-header">DAY 2 <span>7/18 토요일</span></div>
+
+      <div class="tl-row row-free"><div class="tl-time">08:00</div><div class="tl-text"><span class="tag tag-free">자유</span> 기상</div></div>
+      <div class="tl-row row-meal"><div class="tl-time">08:00~08:30</div><div class="tl-text"><span class="tag tag-meal">식사</span> 세면 + 간단한 아침식사</div></div>
+      <div class="tl-row row-sharing"><div class="tl-time">08:30~09:30</div><div class="tl-text"><span class="tag tag-sharing">나눔</span> 아침 묵상 & 나눔 (팀별)<div class="desc">멘토팀과 함께하는 묵상 시간</div></div></div>
+      <div class="tl-row row-activity"><div class="tl-time">09:30~10:30</div><div class="tl-text"><span class="tag tag-activity">활동</span> 뒷정리 + 보물찾기 이벤트</div></div>
+      <div class="tl-row row-move"><div class="tl-time">~11:00</div><div class="tl-text"><span class="tag tag-move">이동</span> 퇴실</div></div>
+      <div class="tl-row row-move"><div class="tl-time">11:00~12:00</div><div class="tl-text"><span class="tag tag-move">이동</span> 별미지교 시흥점으로 이동</div></div>
+      <div class="tl-row row-meal"><div class="tl-time">12:00~13:00</div><div class="tl-text"><span class="tag tag-meal">식사</span> 점심식사<div class="desc">별미지교 시흥점</div></div></div>
+      <div class="tl-row row-move"><div class="tl-time">13:00~13:20</div><div class="tl-text"><span class="tag tag-move">이동</span> 배곧 CGV 이동</div></div>
+      <div class="tl-row row-activity"><div class="tl-time">13:20~15:20</div><div class="tl-text"><span class="tag tag-activity">활동</span> 영화관람 — "다윗"<div class="desc">배곧 CGV</div></div></div>
+      <div class="tl-row row-move"><div class="tl-time">15:20~16:40</div><div class="tl-text"><span class="tag tag-move">이동</span> 교회 이동 → 해산</div></div>
     </div>
 
     <!-- DAY 3 -->
     <div class="day-col">
-      <div class="day-tag">DAY 3 <span>7/19 일요일</span></div>
-      <div class="tl-row major"><div class="tl-time">11:00</div><div class="tl-text">주일 대예배</div></div>
-      <div class="tl-row"><div class="tl-time">12:00~13:20</div><div class="tl-text">청년부 다과 모임<div class="desc">커피 + 빵</div></div></div>
-      <div class="tl-row major"><div class="tl-time">13:30~15:00</div><div class="tl-text">이단세미나 청강</div></div>
-      <div class="tl-row"><div class="tl-time">15:00</div><div class="tl-text">늦은 점심식사</div></div>
-      <div class="tl-row"><div class="tl-time">이후</div><div class="tl-text">해산</div></div>
-    </div>
+      <div class="day-tag-header">DAY 3 <span>7/19 일요일</span></div>
 
+      <div class="tl-row row-worship"><div class="tl-time">11:00</div><div class="tl-text"><span class="tag tag-worship">예배</span> 주일 대예배</div></div>
+      <div class="tl-row row-meal"><div class="tl-time">12:00~13:20</div><div class="tl-text"><span class="tag tag-meal">식사</span> 청년부 다과 모임<div class="desc">커피 + 빵</div></div></div>
+      <div class="tl-row row-activity"><div class="tl-time">13:30~15:00</div><div class="tl-text"><span class="tag tag-activity">활동</span> 이단세미나 청강</div></div>
+      <div class="tl-row row-meal"><div class="tl-time">15:00</div><div class="tl-text"><span class="tag tag-meal">식사</span> 늦은 점심식사</div></div>
+      <div class="tl-row row-free"><div class="tl-time">이후</div><div class="tl-text"><span class="tag tag-free">자유</span> 해산</div></div>
+    </div>
   </div>
 
   <!-- BOTTOM: CHECKLIST + KEYWORD -->
   <div class="bottom-row">
-
-    <!-- CHECKLIST -->
     <div class="bottom-left">
       <div class="section-label"><span class="ico">🎒</span> 준비물 체크리스트</div>
       <div class="check-grid">
@@ -334,7 +304,6 @@
       </div>
     </div>
 
-    <!-- KEYWORD CARD -->
     <div class="bottom-right">
       <div class="section-label"><span class="ico">💬</span> "너의 하나님" 키워드 카드 안내</div>
       <div class="kw-section">
@@ -369,15 +338,12 @@
         </div>
       </div>
     </div>
-
   </div>
 
-  <!-- FOOTER -->
   <div class="footer">
     <div class="big">함께여서 더 감사한 여름, 기대합니다!</div>
     <div class="small">영등포성결교회 카르디아 청년부 · 2026 여름 수련회</div>
   </div>
-
 </div>
 </body>
 </html>
